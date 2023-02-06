@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="page-heading about-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h4>About Our</h4>
+              <h2>our company</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% for i in aboutour %}
+    <div class="best-features about-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>{{ i.name }}</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="{{ i.img.url }}" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>{{ i.name1 }}</h4>
+              <p>{{ i.about }}</p>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+    <div class="team-members">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our Team Members</h2>
+            </div>
+          </div>
+          {% for i in aboutteam %}
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="thumb-container">
+                <img src="{{ i.img.url }}" alt="">
+                <div class="hover-effect">
+                  <div class="hover-content">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="down-content">
+                <h4>{{ i.name }}</h4>
+                <span>{{ i.name1 }}</span>
+                <p>{{ i.about }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %} 
+    <div class="services">
+      <div class="container">
+        <div class="row">
+          {% for i in abouthappy %}
+          <div class="col-md-4">
+            <div class="service-item">
+              <div class="icon">
+                <i class="fa fa-gear"></i>
+              </div>
+              <div class="down-content">
+                <h4>{{ i.name }}</h4>
+                <p>{{ i.about }}</p>
+                <a href="#" class="filled-button">{{ i.name1 }}</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %} 
+
+    <div class="happy-clients">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Happy Partners</h2>
+            </div>
+          </div>
+          <div class="col-md-12">
+
+            <div class="owl-clients owl-carousel">
+         {% for i in aboutpart %}
+
+              <div class="client-item">
+
+                <img src="{{ i.img.url }}" alt="1">
+
+              </div>
+         {% endfor %}
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
